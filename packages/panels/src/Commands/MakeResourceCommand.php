@@ -214,8 +214,8 @@ class MakeResourceCommand extends Command
         $tableBulkActions = implode(PHP_EOL, $tableBulkActions);
 
         $potentialCluster = (string) str($namespace)->beforeLast('\Resources');
-        $clusterAssignment = null;
-        $clusterImport = null;
+        $clusterAssignment = null ?? '';
+        $clusterImport = null ?? '';
 
         if (
             class_exists($potentialCluster) &&
