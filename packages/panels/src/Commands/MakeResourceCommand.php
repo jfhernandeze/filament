@@ -227,7 +227,7 @@ class MakeResourceCommand extends Command
 
         $this->copyStubToApp('Resource', $resourcePath, [
             'clusterAssignment' => $clusterAssignment,
-            'clusterImport' => $clusterImport,
+            'clusterImport' => $clusterImport ?? '',
             'eloquentQuery' => $this->indentString($eloquentQuery, 1),
             'formSchema' => $this->indentString($this->option('generate') ? $this->getResourceFormSchema(
                 $modelNamespace . ($modelSubNamespace !== '' ? "\\{$modelSubNamespace}" : '') . '\\' . $modelClass,
